@@ -1,0 +1,40 @@
+server:
+  port: 8082
+  mode: dev
+mysql:
+  host: 127.0.0.1
+  port: 8811
+  username: root
+  password: concobebe
+  dbname: shopdevgo
+  maxIdleConns: 10
+  maxOpenConns: 100 #0 is overlimit
+  connMaxLifeTime: 36000 #waiting time
+logger:
+  level: debug
+  file_log_name: "./storages/logs/dev.001.log"
+  max_size: 500
+  max_backups: 3
+  max_age: 28
+  compress: true
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password: nghiamap123
+  database: 0
+# databases:
+#   - user: admin
+#     password: admin
+#     host: localhost
+#     dbName: concobebe
+#   - user: admin2
+#     password: admin2
+#     host: localhost2
+#     dbName: concobebe2
+# security:
+#   jwt:
+#     key: abc123
+# elasticsearch:
+#   user: admin
+# rabbitMQ:
+#   user: admin
