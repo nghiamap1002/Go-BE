@@ -1,4 +1,4 @@
-package kafka
+package main
 
 import (
 	"context"
@@ -83,13 +83,13 @@ func actionStock(c *gin.Context) {
 }
 
 func RegisterConsumerATC(id int) {
-	kafkaGroupId := "consumer-group-"
+	kafkaGroupId := fmt.Sprintf("consumer-group-%d", id) // "consumer-group-"
 
 	reader := getKafkaReader(kafkaURL, kafkaTopic, kafkaGroupId)
 
 	defer reader.Close()
 
-	fmt.Printf("Consumer(%d) ATC:", id)
+	fmt.Printf("Consumer(%d) ATC:\n", id)
 
 	for {
 		m, err := reader.ReadMessage(context.Background())
